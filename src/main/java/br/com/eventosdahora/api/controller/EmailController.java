@@ -1,6 +1,6 @@
 package br.com.eventosdahora.api.controller;
 
-import br.com.eventosdahora.api.controller.request.EmailSenderRequest;
+import br.com.eventosdahora.api.controller.request.EmailRequest;
 import br.com.eventosdahora.api.service.EmailService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -26,8 +26,8 @@ public class EmailController {
 			@ApiResponse(code = 200, message = "Email enviado"),
 			@ApiResponse(code = 400, message = "Erro na requisição")
 	})
-	public void save(@RequestBody @Validated EmailSenderRequest emailSenderRequest) {
-		emailService.sendEmail(emailSenderRequest);
+	public void save(@RequestBody @Validated EmailRequest emailRequest) {
+		emailService.sendEmail(emailRequest);
 	}
 	
 }
